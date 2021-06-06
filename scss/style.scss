@@ -1,0 +1,154 @@
+// 設定値
+$bace-color: #fcebef;
+$accent-color: #f6c0d1;
+$sub-color: #ef8893;
+$white-color: #fff;
+
+body {
+  background-color: $bace-color;
+  margin: 0;
+  font-size: 20px;
+  font-family: 'Kaushan Script', cursive;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.header {
+  height: 60px;
+  display: flex;
+  background-color: $accent-color;
+  z-index: 10;
+  position: relative;
+  font-family: 'Vollkorn', serif;
+
+  .header_logo {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    flex: 1;
+  }
+  .title_name {
+    text-overflow: ellipsis;
+  }
+  .header_menu {
+    width: 400px;
+    display: flex;
+    align-items: center;
+
+    .button {
+      color: $white-color;
+      width: 33%;
+      padding: 10px;
+      margin-left: 5px;
+      background-color: $sub-color;
+      text-align: center;
+      border-bottom: double 5px $bace-color;
+    }
+  }
+}
+
+.container1 {
+  background-image: url('../img/cherry-blossom-tree-1225186_1920.jpg');
+  background-size: auto;
+  max-width: 100%;
+  min-height: 95vh;
+  height: 800px;
+  width/***/: auto;
+  margin: 0;
+  padding: 0px;
+  .block_content {
+    animation-name: huwahuwa;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 1.5s;
+    display: block_content;
+    background-color: $bace-color;
+    margin: 300px 10% 10% 10%;
+    width: 300px;
+    height: 300px;
+    .frame {
+      margin: 5px;
+      height: 100%;
+      background-color: $bace-color;
+      border: solid 1px $sub-color; /* 内側の線になる一本線の枠線をひく*/
+      outline: solid 5px $accent-color; /* 外側の線になる5pxの一本線の枠線をひく*/
+      outline-offset: 1px; /* 内側の線になる一本線の枠線をひく*/
+    }
+  }
+}
+
+.container2 {
+  padding-top: 4%;
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+  .content {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    // animation: fadeIn 2s ease 0.3s 1 normal;
+  }
+  .content_info {
+    padding: 5px;
+  }
+  .content_detail {
+    padding-left: 5%;
+  }
+}
+
+.footer {
+  background-color: $accent-color;
+  text-align: center;
+  .user_info {
+    padding-top: 5%;
+    margin: 0 auto;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    .profile_info {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      .icon_image {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+      }
+    }
+    .account_detail {
+      padding-left: 30px;
+    }
+  }
+}
+
+// アニメーション
+@keyframes huwahuwa {
+  0% {
+    transform: translate(0, 0px);
+  }
+
+  100% {
+    transform: translate(0, -15px);
+  }
+}
+
+@keyframes fadeIn {
+  /*animetion-nameで設定した値を書く*/
+
+  0% {
+    opacity: 0;
+  } /*アニメーション開始時は不透明度0%*/
+
+  100% {
+    opacity: 1;
+  } /*アニメーション終了時は不透明度100%*/
+}
+
+// レスポンシブ対応
+// スマホ対応
+@media screen and (max-width: 480px) {
+  .content {
+    flex-wrap: wrap;
+  }
+}
